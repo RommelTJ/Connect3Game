@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Connect3Game</string>
+    <string name="top_left">Top Left</string>
+    <string name="top_middle">Top Middle</string>
+    <string name="top_right">Top Right</string>
+    <string name="middle_left">Middle Left</string>
+    <string name="middle_middle">Middle Middle</string>
+    <string name="middle_right">Middle Right</string>
+    <string name="bottom_left">Bottom Left</string>
+    <string name="bottom_middle">Bottom Middle</string>
+    <string name="bottom_right">Bottom Right</string>
 </resources>
