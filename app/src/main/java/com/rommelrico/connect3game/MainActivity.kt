@@ -13,8 +13,6 @@ class MainActivity : AppCompatActivity() {
         counter.translationY = -1500f
         counter.setImageResource(R.drawable.yellow)
         counter.animate().translationYBy(1500f).setDuration(300).rotation(3600f)
-
-        Log.i("INFO", "Image received: ${counter}")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
