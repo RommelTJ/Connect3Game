@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,7 +43,8 @@ class MainActivity : AppCompatActivity() {
             if (gameState[winningPosition[0]] == gameState[winningPosition[1]]
                     && gameState[winningPosition[1]] == gameState[winningPosition[2]]
                     && gameState[winningPosition[0]] != 2) {
-                
+                // Someone has won!
+                Toast.makeText(this, "Someone has won!", Toast.LENGTH_LONG).show()
             }
         }
 
