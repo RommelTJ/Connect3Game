@@ -10,8 +10,15 @@ class MainActivity : AppCompatActivity() {
     // 0 = yellow, 1 = red.
     var activePlayer = 0
 
+    // Game state
+    var gameState = arrayOf(2, 2, 2, 2, 2, 2, 2, 2, 2)
+
     fun dropIn(view: View) {
         val counter = view as ImageView
+
+        val tappedCounter = (counter.getTag().toString()).toInt()
+        gameState[tappedCounter] = activePlayer
+
         counter.translationY = -1500f
 
         if (activePlayer == 0) {
