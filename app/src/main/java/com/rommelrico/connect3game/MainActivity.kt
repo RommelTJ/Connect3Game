@@ -36,6 +36,16 @@ class MainActivity : AppCompatActivity() {
         }
 
         counter.animate().translationYBy(1500f).setDuration(300).rotation(3600f)
+
+        // Check winning positions
+        for (winningPosition in winningPositions) {
+            if (gameState[winningPosition[0]] == gameState[winningPosition[1]]
+                    && gameState[winningPosition[1]] == gameState[winningPosition[2]]
+                    && gameState[winningPosition[0]] != 2) {
+                
+            }
+        }
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
