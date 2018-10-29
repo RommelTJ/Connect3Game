@@ -3,10 +3,7 @@ package com.rommelrico.connect3game
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -67,6 +64,26 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    fun playAgain(view: View) {
+        val playAgainButton = findViewById<Button>(R.id.playAgainButton)
+        val winnerTextView = findViewById<TextView>(R.id.winnerTextView)
+        playAgainButton.visibility = View.INVISIBLE
+        winnerTextView.visibility = View.INVISIBLE
+
+        val gridLayout = findViewById<GridLayout>(R.id.gridLayout)
+        for (i in 0 until gridLayout.childCount) {
+            val counter = gridLayout.getChildAt(i) as ImageView
+            counter.setImageDrawable(null)
+        }
+
+        for (i in gameState.indices) {
+            gameState[i] = 2
+        }
+
+        activePlayer = 0
+        gameActive = true
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
