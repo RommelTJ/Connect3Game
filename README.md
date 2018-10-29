@@ -1,6 +1,6 @@
 # Connect3Game
 
-Version: 0.0.1 - 24 Oct 2018
+Version: 1.0.0 - 29 Oct 2018
 
 ## Description
 
