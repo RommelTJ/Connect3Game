@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                     winner = "Red"
                 }
 
-                Toast.makeText(this, "Someone has won!", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "$winner won!", Toast.LENGTH_LONG).show()
             }
         }
 
