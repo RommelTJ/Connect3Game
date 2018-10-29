@@ -26,36 +26,38 @@ class MainActivity : AppCompatActivity() {
         val counter = view as ImageView
 
         val tappedCounter = (counter.getTag().toString()).toInt()
-        gameState[tappedCounter] = activePlayer
+        if (gameState[tappedCounter] == 2 && gameActive) {
+            gameState[tappedCounter] = activePlayer
 
-        counter.translationY = -1500f
+            counter.translationY = -1500f
 
-        if (activePlayer == 0) {
-            counter.setImageResource(R.drawable.yellow)
-            activePlayer = 1
-        } else {
-            counter.setImageResource(R.drawable.red)
-            activePlayer = 0
-        }
+            if (activePlayer == 0) {
+                counter.setImageResource(R.drawable.yellow)
+                activePlayer = 1
+            } else {
+                counter.setImageResource(R.drawable.red)
+                activePlayer = 0
+            }
 
-        counter.animate().translationYBy(1500f).setDuration(300).rotation(3600f)
+            counter.animate().translationYBy(1500f).setDuration(300).rotation(3600f)
 
-        // Check winning positions
-        for (winningPosition in winningPositions) {
-            if (gameState[winningPosition[0]] == gameState[winningPosition[1]]
-                    && gameState[winningPosition[1]] == gameState[winningPosition[2]]
-                    && gameState[winningPosition[0]] != 2) {
+            // Check winning positions
+            for (winningPosition in winningPositions) {
+                if (gameState[winningPosition[0]] == gameState[winningPosition[1]]
+                        && gameState[winningPosition[1]] == gameState[winningPosition[2]]
+                        && gameState[winningPosition[0]] != 2) {
 
-                // Someone has won!
-                gameActive = false
-                var winner = ""
-                if (activePlayer == 1) {
-                    winner = "Yellow"
-                } else {
-                    winner = "Red"
+                    // Someone has won!
+                    gameActive = false
+                    var winner = ""
+                    if (activePlayer == 1) {
+                        winner = "Yellow"
+                    } else {
+                        winner = "Red"
+                    }
+
+                    Toast.makeText(this, "$winner won!", Toast.LENGTH_LONG).show()
                 }
-
-                Toast.makeText(this, "$winner won!", Toast.LENGTH_LONG).show()
             }
         }
 
