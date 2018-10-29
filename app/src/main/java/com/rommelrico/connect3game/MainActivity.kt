@@ -10,6 +10,8 @@ class MainActivity : AppCompatActivity() {
 
     // 0 = yellow, 1 = red.
     var activePlayer = 0
+    // Tracks game state.
+    var gameActive = true
 
     // Game state
     var gameState = arrayOf(2, 2, 2, 2, 2, 2, 2, 2, 2)
@@ -43,7 +45,16 @@ class MainActivity : AppCompatActivity() {
             if (gameState[winningPosition[0]] == gameState[winningPosition[1]]
                     && gameState[winningPosition[1]] == gameState[winningPosition[2]]
                     && gameState[winningPosition[0]] != 2) {
+
                 // Someone has won!
+                gameActive = false
+                var winner = ""
+                if (activePlayer == 1) {
+                    winner = "Yellow"
+                } else {
+                    winner = "Red"
+                }
+
                 Toast.makeText(this, "Someone has won!", Toast.LENGTH_LONG).show()
             }
         }
