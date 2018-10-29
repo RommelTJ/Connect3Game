@@ -3,7 +3,9 @@ package com.rommelrico.connect3game
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -56,7 +58,11 @@ class MainActivity : AppCompatActivity() {
                         winner = "Red"
                     }
 
-                    Toast.makeText(this, "$winner won!", Toast.LENGTH_LONG).show()
+                    val playAgainButton = findViewById<Button>(R.id.playAgainButton)
+                    val winnerTextView = findViewById<TextView>(R.id.winnerTextView)
+                    winnerTextView.text = "$winner has won!"
+                    playAgainButton.visibility = View.VISIBLE
+                    winnerTextView.visibility = View.VISIBLE
                 }
             }
         }
